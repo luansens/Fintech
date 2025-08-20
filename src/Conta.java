@@ -4,15 +4,25 @@ public class Conta {
     private double saldo;
 
     public void depositar(double valor) {
+        this.saldo += valor;
         System.out.println("Método depositar chamado. Valor: " + valor);
     }
 
     public void sacar(double valor) {
+        this.saldo -= valor;
         System.out.println("Método sacar chamado. Valor: " + valor);
     }
 
     public void exibirSaldo() {
         System.out.println("Método exibirSaldo chamado. Saldo: " + saldo);
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setTipo(TipoConta tipo) {
+        this.tipo = tipo;
     }
 
     public int getId() {
@@ -25,5 +35,14 @@ public class Conta {
 
     public double getSaldo() {
         return saldo;
+    }
+
+    @Override
+    public String toString() {
+        return "Conta{" +
+                "id=" + id +
+                ", tipo=" + tipo +
+                ", saldo=" + saldo +
+                '}';
     }
 }
