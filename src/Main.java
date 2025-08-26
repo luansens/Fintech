@@ -3,6 +3,8 @@ import com.fintech.movimentacoes.Movimentacao;
 import com.fintech.movimentacoes.Saque;
 import com.fintech.movimentacoes.TipoTransacao;
 
+import java.time.LocalDate;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -35,6 +37,15 @@ public class Main {
 
         mov1.extrato();
         mov2.extrato();
+
+        ObjetivoFinanceiro objetivo1 = new ObjetivoFinanceiro(1, 1, "Aquisição moto", 30000.00, 30.00, LocalDate.of(2025,6,21), StatusObjetivo.EM_PROGRESSO);
+        objetivo1.registrarDeposito(29970.00);
+        objetivo1.verificarStatus();
+        System.out.println(objetivo1.toString());
+
+
+
+
 
     }
 }
