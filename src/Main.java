@@ -1,3 +1,8 @@
+import com.fintech.movimentacoes.Deposito;
+import com.fintech.movimentacoes.Movimentacao;
+import com.fintech.movimentacoes.Saque;
+import com.fintech.movimentacoes.TipoTransacao;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -25,10 +30,11 @@ public class Main {
 
         System.out.println("-----------------");
 
-        Movimentacao mov1 = new Movimentacao(1,700.0, TipoTransacao.DEPOSITO, conta1.getId(), "Adiantamento salarial");
+        Movimentacao mov1 = new Saque(1,700.0, conta1.getId(), "Adiantamento salarial");
+        Movimentacao mov2 = new Deposito(2,1700.0, conta1.getId(), "Poupança");
 
         mov1.extrato();
-
+        mov2.extrato();
 
     }
 }
