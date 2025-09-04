@@ -1,3 +1,6 @@
+import com.fintech.investimentos.Ativo;
+import com.fintech.investimentos.Cripto;
+import com.fintech.investimentos.Investimento;
 import com.fintech.movimentacoes.Deposito;
 import com.fintech.movimentacoes.Movimentacao;
 import com.fintech.movimentacoes.Saque;
@@ -42,6 +45,22 @@ public class Main {
         objetivo1.registrarDeposito(29970.00);
         objetivo1.verificarStatus();
         System.out.println(objetivo1.toString());
+
+        System.out.println("---------------------------");
+
+        Investimento invst1 = new Cripto(1,50.0, 6);
+        invst1.aplicar("bitcoin",50.0);
+        invst1.informes();
+        invst1.calcularRendimento();
+
+        System.out.println("---------------------------");
+
+        Investimento invst2 = new Ativo(2, 150.0, 24);
+        invst2.aplicar("tesouro direto 2025",150.0);
+        invst2.resgatar(80.0);
+        invst2.informes();
+        invst2.calcularRendimento();
+
 
 
 
