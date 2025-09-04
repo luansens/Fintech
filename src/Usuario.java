@@ -1,4 +1,6 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Usuario {
     private int id;
@@ -7,6 +9,7 @@ public class Usuario {
     private LocalDate dataNascimento;
     private String fotoDePerfilUrl;
     private String senha;
+    private List<ObjetivoFinanceiro> objetivoFinanceiro = new ArrayList<>();
 
 
     public Usuario() {
@@ -23,6 +26,9 @@ public class Usuario {
         this.senha = senha;
     }
 
+    public void registrarObjetivo(ObjetivoFinanceiro objetivo){
+        this.objetivoFinanceiro.add(objetivo);
+    }
 
     public void registrarUsuario() {
         System.out.println("Método registrarUsuario chamado. Usuário: " + nome);
