@@ -5,6 +5,9 @@ import com.fintech.movimentacoes.Deposito;
 import com.fintech.movimentacoes.Movimentacao;
 import com.fintech.movimentacoes.Saque;
 import com.fintech.movimentacoes.TipoTransacao;
+import com.fintech.usuario.PessoaJuridica;
+import com.fintech.usuario.PessoaFisica;
+import com.fintech.usuario.Usuario;
 
 import java.time.LocalDate;
 
@@ -61,6 +64,40 @@ public class Main {
         invst2.informes();
         invst2.calcularRendimento();
 
+
+        PessoaFisica pf = new PessoaFisica(
+                1,
+                "Maria Eduarda",
+                "123.456.789-00", // CPF
+                "MG-12.345.678",  // RG
+                LocalDate.of(2000, 5, 19),
+                "https://foto-perfil.com/maria.jpg",
+                "senha123"
+        );
+
+
+        PessoaJuridica pj = new PessoaJuridica(
+                2,
+                "Tech Solutions",
+                "12.345.678/0001-99", // CNPJ
+                "Tech Solutions LTDA",
+                LocalDate.of(2010, 3, 15),
+                "https://logo.com/tech.jpg",
+                "senha456"
+        );
+
+        pf.registrarUsuario();
+        pj.registrarUsuario();
+
+
+        System.out.println("RG da Pessoa Física: " + pf.getRg());
+        System.out.println("Razão Social da Pessoa Jurídica: " + pj.getRazaoSocial());
+
+        pf.setRg("MG-99.888.777");
+        pj.setRazaoSocial("Tech Solutions Ltda Atualizada");
+
+        System.out.println("RG atualizado da Pessoa Física: " + pf.getRg());
+        System.out.println("Razão Social atualizada da Pessoa Jurídica: " + pj.getRazaoSocial());
 
 
 
