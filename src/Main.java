@@ -1,3 +1,7 @@
+import com.fintech.cartoes.Cartao;
+import com.fintech.cartoes.CartaoCredito;
+import com.fintech.cartoes.CartaoDebito;
+import com.fintech.cartoes.TipoCartao;
 import com.fintech.investimentos.Ativo;
 import com.fintech.investimentos.Cripto;
 import com.fintech.investimentos.Investimento;
@@ -17,6 +21,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello and welcome!");
 
+        System.out.println("\n --- Testando Contas --- \n");
         Conta conta1 = new Conta();
         conta1.setId(1);
         conta1.setTipo(TipoConta.PF);
@@ -36,20 +41,21 @@ public class Main {
         inst1.cadastrarConta(conta2);
         inst1.mostrarContas();
 
-        System.out.println("-----------------");
-
         Movimentacao mov1 = new Saque(1,700.0, conta1.getId(), "Adiantamento salarial");
         Movimentacao mov2 = new Deposito(2,1700.0, conta1.getId(), "Poupança");
 
+        System.out.println("\n --- Testando Movimentações --- \n");
         mov1.extrato();
         mov2.extrato();
+
+        System.out.println("\n --- Testando Objetivo Financeiro --- \n");
 
         ObjetivoFinanceiro objetivo1 = new ObjetivoFinanceiro(1, 1, "Aquisição moto", 30000.00, 30.00, LocalDate.of(2025,6,21), StatusObjetivo.EM_PROGRESSO);
         objetivo1.registrarDeposito(29970.00);
         objetivo1.verificarStatus();
         System.out.println(objetivo1.toString());
 
-        System.out.println("---------------------------");
+        System.out.println("\n --- Testando Investimentos --- \n");
 
         Investimento invst1 = new Cripto(1,50.0, 6);
         invst1.aplicar("bitcoin",50.0);
@@ -63,6 +69,8 @@ public class Main {
         invst2.resgatar(80.0);
         invst2.informes();
         invst2.calcularRendimento();
+
+        System.out.println("\n --- Testando Usuários --- \n");
 
 
         PessoaFisica pf = new PessoaFisica(
@@ -98,6 +106,38 @@ public class Main {
 
         System.out.println("RG atualizado da Pessoa Física: " + pf.getRg());
         System.out.println("Razão Social atualizada da Pessoa Jurídica: " + pj.getRazaoSocial());
+
+
+        Cartao cartao1 = new CartaoCredito(
+                1L,
+                "1234567812341111",
+                TipoCartao.CREDITO,
+                LocalDate.of(2027, 12, 31),
+                100L,
+                2000.0,
+                2000.0
+        );
+
+        Cartao cartao2 = new CartaoDebito(
+                2L,
+                "9876543212342222",
+                TipoCartao.DEBITO,
+                LocalDate.of(2028, 6, 30),
+                200L,
+                0.0,
+                1000.0
+        );
+
+        System.out.println("\n --- Testando Cartões --- \n");
+        cartao1.detalhes();
+        cartao1.pagar(500.0);
+        cartao1.pagar(1800.0);
+
+        System.out.println();
+
+        cartao2.detalhes();
+        cartao2.pagar(200.0);
+        cartao2.pagar(900.0);
 
 
 
