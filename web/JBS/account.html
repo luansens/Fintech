@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conta - Criar</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    .profile-header {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .profile-header h2 {
+      font-weight: 700;
+    }
+
+    .profile-icon {
+      width: 100px;
+      height: 100px;
+      background-color: #f9e5df;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 15px auto;
+      font-size: 50px;
+      color: #d64600;
+    }
+
+    .form-control {
+      background-color: #d9d9d9;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .form-label {
+      font-weight: 600;
+    }
+
+    .btn-save {
+      background-color: #d64600;
+      color: white;
+      font-weight: 600;
+      border-radius: 10px;
+      padding: 12px;
+      font-size: 18px;
+    }
+
+    .btn-save i {
+      margin-right: 8px;
+    }
+
+    .back-btn {
+      font-size: 24px;
+      cursor: pointer;
+      margin: 15px;
+      display: inline-block;
+    }
+
+    .sector {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="back-btn">
+    <a href="dashboard.html" style="text-decoration: none; color: black;">
+        <i class="bi bi-arrow-left"></i>
+    </a>
+  </div>
+
+  <div class="container">
+    <div class="profile-header">
+      <h2>José</h2>
+      <div class="profile-icon">
+        <i class="bi bi-person"></i>
+      </div>
+      <div class="sector">
+        <i class="bi bi-people"></i> Setor de vendas
+      </div>
+    </div>
+    <form class="mt-4">
+      <div class="mb-3">
+        <label class="form-label"><i class="bi bi-person-badge"></i> Nome</label>
+        <input type="text" class="form-control" value="José Augusto">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label"><i class="bi bi-envelope"></i> E-mail</label>
+        <input type="email" class="form-control" value="zeaugusto31@yahoo.com.br">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label"><i class="bi bi-telephone"></i> Telefone</label>
+        <input type="text" class="form-control" value="(99) 99999-9999">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label"><i class="bi bi-lock"></i> Senha</label>
+        <input type="password" class="form-control" value="***********">
+      </div>
+
+      <button type="button" class="btn btn-save w-100">
+        <i class="bi bi-check-lg"></i> SALVAR
+      </button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+.container-desafio-andamento-detalhado {
+    background-color: var(--light-background);
+    border: 0.5px solid var(--darkgray-background);
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px #00000025;
+    color: #000000;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    margin-top: 1rem;
+    height: 78vh;
+}
+
+.container-desafio-andamento-detalhado .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.container-desafio-andamento-detalhado .content h5 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.container-desafio-andamento-detalhado .content progress {
+    appearance: none;
+    max-width: 80%;
+    width: 47vw;
+}
+
+
+.container-desafio-andamento-detalhado .content progress::-webkit-progress-bar {
+  background-color: #eee;
+  color: #AE2431;
+  border-radius: 10px;
+}
+
+.container-desafio-andamento-detalhado .content progress::-webkit-progress-value {
+  background-color: var(--main-orange);
+  border-radius: 10px;
+}
+
+/* Firefox (quem usa esse navegador hj em dia? enfim, apoio a inclusão) */
+.container-desafio-andamento-detalhado .content progress::-moz-progress-bar {
+  background-color: var(--main-orange);
+  border-radius: 10px;
+}
+
+.container-desafio-andamento-detalhado .content button {
+    background-color: var(--main-orange);
+    border: none;
+    border-radius: 10px 10px 0 10px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    color: #FFFFFF;
+    font-size: 1.4rem;
+    width: 9.625rem;
+    max-width: 80%;
+    padding: 1rem;
+}
+
+.container-desafio-andamento-detalhado .content .btn-white {
+  background-color: #F5F5F5;
+  color: #000000;
+}

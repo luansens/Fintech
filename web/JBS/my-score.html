@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+    :root {
+      --title-font: 'Barlow Condensed', sans-serif;
+      --text-font: 'Barlow', sans-serif;
+      --light-background: #F5F5F5;
+      --darkred-background: #AE2431;
+      --darkgray-background: #D9D9D9;
+      --main-orange: #DC4405;
+    }
+
+    body {
+      background-color: #FFFFFF;
+      font-family: var(--title-font);
+    }
+
+    header {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .container-pontos {
+      background-color: var(--light-background);
+      border-radius: 10px;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .container-pontos-text h5 {
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    .container-pontos-text p {
+      font-size: 3rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .card-desafio {
+      background-color: var(--darkred-background);
+      border-radius: 10px;
+      color: #fff;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-desafio h4 {
+      font-weight: 700;
+      font-size: 1.3rem;
+      
+    }
+
+    .card-desafio p {
+      margin: 0.5rem 0;
+    }
+
+    .badge-pontos {
+      background-color: var(--main-orange);
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      font-weight: 700;
+      display: inline-block;
+      margin-top: 0.5rem;
+      text-align: center;
+      align-self: stretch;
+    }
+
+    footer {
+      padding: 0 50px;
+      background-color: var(--darkgray-background);
+    }
+
+    .icon {
+      max-width: 16rem;
+      min-width: 1.5625rem;
+      height: auto;
+      object-fit: contain;
+    }
+  </style>
+  <title>Meus Pontos</title>
+</head>
+<body id="home">
+  <header class="px-3 py-3 px-md-4">
+    Meus Pontos
+  </header>
+
+  <main class="container-fluid px-3 px-md-5 px-sm-3 mt-4">
+
+    <div class="container container-fluid container-pontos d-flex justify-content-between align-items-center">
+            <div class="column my-5 ps-4">
+                <canvas id="pontosEconomia"></canvas>
+            </div>
+            <div class="container-pontos-text row pe-4">
+                <h5>Pontos até o próximo nível</h5>
+                <p>150/200</p>                
+            </div>
+        </div>
+
+    <h4 class="mt-4">Últimos 3 desafios cumpridos</h4>
+
+    <div class="card-desafio">
+      <h4>Feedback positivo</h4>
+      <p>Complete 3 atendimentos com feedback nota maior ou igual a 4</p>
+      <div class="badge-pontos">Esse desafio concedeu <br> 40 PONTOS</div>
+    </div>
+
+    <div class="card-desafio">
+      <h4>Quase cacarejando</h4>
+      <p>Venda mais de 10 quilos da seção de aves</p>
+      <div class="badge-pontos">Esse desafio concedeu <br> 15 PONTOS</div>
+    </div>
+
+    <div class="card-desafio">
+      <h4>Bom de Mensagem</h4>
+      <p>Obtenha o Ticket Médio de no mínimo R$ 100,00 em vendas online no período de 1 semana</p>
+      <div class="badge-pontos">Esse desafio concedeu <br> 80 PONTOS</div>
+    </div>
+  </main>
+
+  <footer class="sticky-bottom">
+    <ul class="d-flex justify-content-between align-items-center list-unstyled m-0 py-3 px-4">
+      <li class="nav-item">
+        <a class="nav-link" href="challenges.html">
+          <img class="img-fluid icon" src="./assets/Puzzle.png" alt="Desafios">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="dashboard.html" class="nav-link">
+          <img class="img-fluid icon" src="./assets/House_01.png" alt="Home">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="account.html" class="nav-link">
+          <img class="img-fluid icon" src="./assets/User_02.png" alt="Conta">
+        </a>
+      </li>
+    </ul>
+  </footer>
+
+  <script>
+    const pontosEconomia = document.getElementById('pontosEconomia').getContext('2d');
+        const graficoPontos = new Chart(pontosEconomia, {
+            type: 'doughnut',
+            data: {
+                labels: [
+                    'Pontos',
+                    'Faltando'
+                ],
+                datasets: [{
+                    label: 'Pontos',
+                    data: [75, 25],
+                    backgroundColor: [
+                        'rgb(227, 18, 18)',
+                        'rgb(217, 217, 217)'
+                    ],
+                    borderColor: [
+                        'rgb(227, 18, 18)',
+                        'rgb(217, 217, 217)'
+                    ]
+                }]
+            },
+            options: {
+                responsive: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                centerText: {
+                    display: true,
+                    text: '75%' 
+                },
+                cutout: '80%',
+                radius: '60%'
+            },
+            plugins: [{
+                id: 'textCenter',
+                afterDraw(chart) {
+                const { ctx, chartArea: { width, height } } = chart;
+                ctx.save();
+                ctx.font = 'bold 1rem sans-serif';
+                ctx.fillStyle = 'black';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText('70%', width / 2, height / 2);
+                ctx.restore();
+                }
+            }]
+        })
+  </script>
+</body>
+</html>
