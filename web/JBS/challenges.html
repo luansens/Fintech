@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=Barlow&family=Nunito:wght@800&display=swap');
+        
+        :root {
+            --title-font: 'Barlow Condensed', sans-serif;
+            --text-font: 'Barlow', sans-serif;
+            --light-background: #F5F5F5;
+            --darkred-background: #AE2431;
+            --darkgray-background: #D9D9D9;
+            --main-orange: #DC4405;
+        }
+
+        body {
+            background-color: #FFFFFF;
+            font-family: var(--text-font);
+            padding-bottom: 83px;
+        }
+
+        .main-header {
+            font-family: var(--title-font);
+            font-size: 3rem;
+            font-weight: 600;
+        }
+        
+        .main-subtitle {
+            font-size: 1.25rem;
+            color: #6c757d;
+        }
+
+        .container-desafio-andamento {
+            background-color: var(--darkred-background);
+            border: 0.5px solid var(--darkgray-background);
+            border-radius: 10px;
+            box-shadow: 0px 4px 4px 0px #00000025;
+            color: #FFFFFF;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .container-melhores-desafios {
+            background-color: var(--light-background);
+            border: 0.5px solid var(--darkgray-background);
+            border-radius: 10px;
+            box-shadow: 0px 4px 4px 0px #00000025;
+            color: #000000;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .challenge-title {
+            font-family: var(--title-font);
+            font-weight: 600;
+            font-size: 1.75rem;
+        }
+        .challenge-subtitle {
+            font-family: var(--text-font);
+            font-size: 1rem;
+        }
+
+        progress {
+            appearance: none;
+            width: 100%;
+            height: 10px;
+        }
+        progress::-webkit-progress-bar {
+            background-color: #eee;
+            border-radius: 10px;
+        }
+        progress::-webkit-progress-value {
+            background-color: var(--main-orange);
+            border-radius: 10px;
+        }
+        progress::-moz-progress-bar {
+            background-color: var(--main-orange);
+            border-radius: 10px;
+        }
+
+        .challenge-button {
+            background-color: var(--main-orange);
+            border: none;
+            border-radius: 10px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            color: #FFFFFF;
+            font-size: 1.4rem;
+            padding: 0.5rem 1.5rem;
+        }
+
+        footer {
+            background-color: var(--darkgray-background)
+        }
+        .icon {
+            max-width: 16rem;
+            min-width: 1.5625rem;
+            height: auto;
+            object-fit: contain;
+        }
+    </style>
+    <title>Swift - Challenges</title>
+</head>
+<body>
+
+<main class="container mt-4">
+    <header>
+        <h1 class="main-header">Desafios</h1>
+        <p class="main-subtitle">Eleve seu nível de colaborador com desafios</p>
+    </header>
+
+    <div class="text-end my-3">
+        <button class="btn btn-light border">
+            Filtrar <i class="bi bi-funnel-fill"></i>
+        </button>
+    </div>
+
+    <div class="container-desafio-andamento">
+        <div class="content">
+            <h2 class="challenge-title">Feedback positivo</h2>
+            <h5 class="challenge-subtitle">Complete 3 atendimentos com feedback nota...</h5>
+            <progress value="85" max="100" class="my-3"></progress>
+            <a href="vermais.html">
+                <button class="challenge-button">Ver Mais</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="container-melhores-desafios">
+        <div class="content">
+            <h2 class="challenge-title">"Os humilhados serão exaltados"</h2>
+            <h5 class="challenge-subtitle">Venda um produto que tem baixa saída</h5>
+            <a href="vermais2.html">
+                <button class="challenge-button mt-3">Participar</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="container-melhores-desafios">
+        <div class="content">
+            <h2 class="challenge-title">Mix campeão</h2>
+            <h5 class="challenge-subtitle">Venda ao menos 4 produtos diferentes em uma única</h5>
+            <progress value="50" max="100" class="my-3"></progress>
+            <a href="vermais3.html">
+                <button class="challenge-button">Participar</button>
+            </a>
+        </div>
+    </div>
+</main>
+
+<footer class="fixed-bottom">
+    <ul class="d-flex justify-content-between align-items-center list-unstyled m-0 py-3 px-4 py-lg-4 px-lg-5">
+        <li class="nav-item">
+            <a class="nav-link" href="#"><img class="img-fluid icon" src="./assets/Puzzle.png" alt="Desafios"></a>
+        </li>
+        <li class="nav-item">
+            <a href="dashboard.html" class="nav-link"><img class="img-fluid icon" src="./assets/House_01.png" alt="Home"></a>
+        </li>
+        <li class="nav-item">
+            <a href="account.html" class="nav-link"><img class="img-fluid icon" src="./assets/User_02.png" alt="Conta"></a>
+        </li>
+    </ul>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js"></script>
+<!-- <script>
+    const challengeButtons = document.querySelectorAll('.challenge-button');
+    challengeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const cardTitle = this.parentElement.querySelector('.challenge-title').innerText;
+            alert('Você interagiu com o desafio: ' + cardTitle);
+        });
+    });
+</script> -->
+</body>
+</html>
