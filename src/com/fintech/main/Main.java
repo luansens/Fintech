@@ -1,17 +1,17 @@
-import com.fintech.cartoes.Cartao;
-import com.fintech.cartoes.CartaoCredito;
-import com.fintech.cartoes.CartaoDebito;
-import com.fintech.cartoes.TipoCartao;
-import com.fintech.investimentos.Ativo;
-import com.fintech.investimentos.Cripto;
-import com.fintech.investimentos.Investimento;
-import com.fintech.movimentacoes.Deposito;
-import com.fintech.movimentacoes.Movimentacao;
-import com.fintech.movimentacoes.Saque;
-import com.fintech.movimentacoes.TipoTransacao;
-import com.fintech.usuario.PessoaJuridica;
-import com.fintech.usuario.PessoaFisica;
-import com.fintech.usuario.Usuario;
+package com.fintech.main;
+
+import com.fintech.main.cartoes.Cartao;
+import com.fintech.main.cartoes.CartaoCredito;
+import com.fintech.main.cartoes.CartaoDebito;
+import com.fintech.main.cartoes.TipoCartao;
+import com.fintech.main.investimentos.Ativo;
+import com.fintech.main.investimentos.Cripto;
+import com.fintech.main.investimentos.Investimento;
+import com.fintech.main.movimentacoes.Deposito;
+import com.fintech.main.movimentacoes.Movimentacao;
+import com.fintech.main.movimentacoes.Saque;
+import com.fintech.main.usuario.PessoaJuridica;
+import com.fintech.main.usuario.PessoaFisica;
 
 import java.time.LocalDate;
 

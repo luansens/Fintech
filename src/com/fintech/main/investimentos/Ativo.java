@@ -1,4 +1,4 @@
-package com.fintech.investimentos;
+package com.fintech.main.investimentos;
 
 public class Ativo extends Investimento{
     public Ativo(int id, double valorAplicado, int prazoMeses) {

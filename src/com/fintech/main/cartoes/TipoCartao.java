@@ -1,4 +1,4 @@
-package com.fintech.cartoes;
+package com.fintech.main.cartoes;
 
 public enum TipoCartao {
     CREDITO,

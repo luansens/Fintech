@@ -1,3 +1,4 @@
+package com.fintech.main;
 public class Conta {
     private int id;
     private TipoConta tipo;

@@ -1,4 +1,4 @@
-package com.fintech.movimentacoes;
+package com.fintech.main.movimentacoes;
 
 public class Deposito extends Movimentacao {
 

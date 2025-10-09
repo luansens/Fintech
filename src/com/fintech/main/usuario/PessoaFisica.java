@@ -1,4 +1,4 @@
-package com.fintech.usuario;
+package com.fintech.main.usuario;
 
 import java.time.LocalDate;
 

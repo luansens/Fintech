@@ -1,4 +1,4 @@
-package com.fintech.investimentos;
+package com.fintech.main.investimentos;
 
 public class Cripto extends Investimento {
 
